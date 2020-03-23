@@ -1,4 +1,4 @@
-@* @{
+@{
     Layout = "_Layout";
 }
 
@@ -15,12 +15,12 @@
         <p>no items found</p>
     }
 
-    @foreach (Item item in @Model.Items)
+    @foreach (var join in @Model.Items)
     {
-        <li>@item.Description</li>
+        <li>@join.Item.Description</li>
     }
 </ul>
 
 <p>@Html.ActionLink("Back to list", "Index")</p>
 <p>@Html.ActionLink("Edit Category", "Edit", new { id = Model.CategoryId })</p>
-<p>@Html.ActionLink("Delete Category", "Delete", new { id = Model.CategoryId })</p> *@
+<p>@Html.ActionLink("Delete Category", "Delete", new { id = Model.CategoryId })</p>
